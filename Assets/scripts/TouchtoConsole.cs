@@ -17,13 +17,11 @@ public class TouchtoConsole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (Touch peter in Input.touches)
+        if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
         {
-            if (peter.phase == TouchPhase.Began)
-            {
-                i++;
-            }
+            i++;
+            CountText.text = i.ToString();
         }
-        CountText.text = i.ToString();
     }
-}
+    }
+
